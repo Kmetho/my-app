@@ -18,9 +18,14 @@
     border: none;
     border-radius: 20px;
     color: rgb(31, 12, 66);
-    font-family: var(--hanken-font), Arial, Helvetica, sans-serif;
+    font-family: var(--hanken-font), Helvetica, sans-serif;
+    font-weight: 400;
     font-size: 0.75rem;
     margin-top: 50px;
     padding: 10px;
+  }
+
+  .button:hover {
+    transform: scale(1.2);
   }
   
