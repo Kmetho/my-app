@@ -12,10 +12,11 @@
 .headerBox {
   font-family: var(--playfair-font), "Times New Roman", Times, serif;
   color: var(--white-color);
-  font-style: italic;
   margin: 5%;
   position: relative;
   z-index: 2;
+  text-align: left;
+  line-height: 1;
 }
 
 .header {
@@ -27,7 +28,8 @@
 .underheader {
   font-size: 1.5rem;
   margin-top: 2rem;
-  line-height: 1rem;
+  font-style: italic;
+  font-weight: 200;
 }
 
 .button {
@@ -46,7 +48,6 @@
   transform: scale(1.2);
 }
 
-
 /** sm breakpoint **/
 @media (min-width: 640px) {
   .header {
@@ -55,7 +56,7 @@
   }
 
   .underheader {
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
     max-width: 36rem;
   }
 
@@ -67,12 +68,12 @@
 
 /** md breakpoint **/
 @media (min-width: 768px) {
-  .title {
-    font-size: 3.75rem /* 60px */;
+  .header {
+    font-size: 4rem;
     line-height: 1;
   }
 
-  .subTitle {
+  .underheader {
     margin-top: 1.25rem;
   }
 
@@ -84,32 +85,11 @@
 
 /** lg breakpoint **/
 @media (min-width: 1024px) {
-  .container {
-    text-align: left;
-  }
-
-  .title {
-    font-size: 4.5rem /* 72px */;
+  .header {
+    font-size: 5rem;
     line-height: 1;
   }
-
-  .title2 {
-    padding-left: 0.5rem;
-  }
-
-  .subTitle {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .buttonWrapper {
-    justify-content: flex-start;
-  }
-}
-
-/** xl breakpoint **/
-@media (min-width: 1280px) {
-  .title2 {
-    display: inline;
+  .underheader {
+    font-size: 2.5rem;
   }
 }
