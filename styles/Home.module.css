@@ -1,0 +1,96 @@
+/** 
+  Breakpoints:
+  ------------
+  sm: min-width: 640px; //small device
+  md: min-width: 768px; // medium device
+  lg: min-width: 1024px; // large device
+  xl: min-width: 1280px; // extra large device
+  2xl: min-width: 1536px; // 2 x extra large device
+**/
+
+/** By default, this is a mobile breakpoint **/
+.headerBox {
+    font-family: var(--playfair-font), "Times New Roman", Times, serif;
+    color: var(--white-color);
+    margin: 5%;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    line-height: 1;
+  }
+  
+  .header {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+  
+  .underheader {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-style: italic;
+    font-weight: 200;
+  }
+  
+  .button {
+    cursor: pointer;
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 20px;
+    color: var(--lavenderfloral-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .button:hover {
+    transform: scale(1.2);
+  }
+  
+  /** sm breakpoint **/
+  @media (min-width: 640px) {
+    .header {
+      font-size: 3rem /* 48px */;
+      line-height: 1;
+    }
+  
+    .underheader {
+      margin-top: 1.5rem;
+      max-width: 36rem;
+    }
+  
+    .buttonWrapper {
+      display: flex;
+      margin-top: 2rem;
+    }
+  }
+  
+  /** md breakpoint **/
+  @media (min-width: 768px) {
+    .header {
+      font-size: 4rem;
+      line-height: 1;
+    }
+  
+    .underheader {
+      margin-top: 1.25rem;
+    }
+  
+    .button {
+      padding-top: 1rem 2.5rem;
+      line-height: 1.75rem;
+    }
+  }
+  
+  /** lg breakpoint **/
+  @media (min-width: 1024px) {
+    .header {
+      font-size: 5rem;
+      line-height: 1;
+    }
+    .underheader {
+      font-size: 2.5rem;
+    }
+  }
+  

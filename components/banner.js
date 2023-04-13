@@ -1,5 +1,4 @@
-import styles from "./banner.module.css";
-import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 const Banner = (props) => {
   return (
@@ -9,10 +8,10 @@ const Banner = (props) => {
       <button className={styles.button} onClick={props.handleOnClick}>
         {props.buttonText}
       </button>
-      <img className={styles.star1} src="../static/star.png"></img>
-      <img className={styles.star2} src="../static/star.png"></img>
-      <img className={styles.star3} src="../static/star.png"></img>
-      <img className={styles.star4} src="../static/star.png"></img>
+      <img className={styles.star1} src="../static/star1.png"></img>
+      <img className={styles.star2} src="../static/star2.png"></img>
+      <img className={styles.star3} src="../static/star3.png"></img>
+      <img className={styles.star4} src="../static/star1.png"></img>
     </div>
   );
 };
