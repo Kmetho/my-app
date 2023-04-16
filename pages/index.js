@@ -34,6 +34,13 @@ export default function Home() {
         <div>
           <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
         </div>
+        <Image
+        className={styles.sparkles}
+          src="/static/bg-stars.png"
+          alt="sparkles"
+          width="750"
+          height="375"
+        />
       </main>
     </>
   );
