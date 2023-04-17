@@ -35,11 +35,11 @@ export default function Home() {
           <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
         </div>
         <Image
-        className={styles.sparkles}
+          className={styles.sparkles}
           src="/static/bg-stars.png"
           alt="sparkles"
-          width="750"
-          height="375"
+          width="1000"
+          height="600"
         />
       </main>
     </>
