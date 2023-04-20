@@ -21,8 +21,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Where to move</title>
-        <meta name="description" content="Where to move" />
+        <title>Activities</title>
+        <meta name="description" content="What to do in Paris" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>
