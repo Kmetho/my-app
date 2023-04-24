@@ -41,6 +41,9 @@ export default function Home() {
           height="600"
         />
         <GalleriesSection title="Galleries" />
+        <GalleriesSection title="Galleries" />
+        <GalleriesSection title="Galleries" />
+        <GalleriesSection title="Galleries" />
         {/* <Section title="Parks" />
         <Section title="Clubs" />
         <Section title="Bars" />
