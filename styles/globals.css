@@ -41,4 +41,19 @@ a {
   color: inherit;
   text-decoration: none;
 }
+ h1,h2,h3,h4,h5,h6 {
+  font-family: var(--playfair-font), "Times New Roman", Times, serif;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1;
+ }
 
+section > h2 {
+  margin: auto 5%;
+}
+
+ section > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto 5%;
+ }

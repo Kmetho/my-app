@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-import Banner from "../components/banner";
+import styles from "../styles/Home.module.css";
+import Banner from "../components/Banner";
+import GalleriesSection from "@/components/GalleriesSection";
 import { Playfair_Display, Hanken_Grotesk } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -31,9 +32,7 @@ export default function Home() {
           styles.main + " " + hanken.variable + " " + playfair.variable
         }
       >
-        <div>
-          <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
-        </div>
+        <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
         <Image
           className={styles.sparkles}
           src="/static/bg-stars.png"
@@ -41,6 +40,13 @@ export default function Home() {
           width="1000"
           height="600"
         />
+        <GalleriesSection title="Galleries" />
+        {/* <Section title="Parks" />
+        <Section title="Clubs" />
+        <Section title="Bars" />
+        <Section title="Coffee shops" />
+        <Section title="Attractions" />
+        <Section title="Vegan food" /> */}
       </main>
     </>
   );
