@@ -53,7 +53,9 @@ section > h2 {
 }
 
  section > div {
+  /* make grid here, it'll look better */
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: auto 5%;
  }
