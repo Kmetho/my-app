@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 
-const City = () => {
+const Place = () => {
   const router = useRouter();
   let name = router.query.id;
   return (
@@ -14,7 +14,7 @@ const City = () => {
         <link rel="icon" href="../static/icon.png" />
       </Head>
       <main>
-        <h1>city: {name}</h1>
+        <h1>{name}</h1>
 
         <Link href="/">return</Link>
       </main>
@@ -22,4 +22,4 @@ const City = () => {
   );
 };
 
-export default City;
+export default Place;

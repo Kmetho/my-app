@@ -2,8 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
-import GalleriesSection from "@/components/GalleriesSection";
+import Section from "@/components/Section";
 import { Playfair_Display, Hanken_Grotesk } from "next/font/google";
+import galleries from "@/arrays/galleries";
+import parks from "@/arrays/parks";
 
 const playfair = Playfair_Display({
   variable: "--playfair-font",
@@ -40,12 +42,9 @@ export default function Home() {
           width="1000"
           height="600"
         />
-        <GalleriesSection title="Galleries" />
-        <GalleriesSection title="Galleries" />
-        <GalleriesSection title="Galleries" />
-        <GalleriesSection title="Galleries" />
-        {/* <Section title="Parks" />
-        <Section title="Clubs" />
+        <Section title="Galleries" array={galleries} />
+        <Section title="Parks" array={parks} />
+        {/* <Section title="Clubs" />
         <Section title="Bars" />
         <Section title="Coffee shops" />
         <Section title="Attractions" />
