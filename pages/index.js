@@ -44,11 +44,11 @@ export default function Home() {
         />
         <Section title="Galleries" array={galleries} />
         <Section title="Parks" array={parks} />
-        {/* <Section title="Clubs" />
-        <Section title="Bars" />
-        <Section title="Coffee shops" />
-        <Section title="Attractions" />
-        <Section title="Vegan food" /> */}
+        {/* <Section title="Clubs" array={clubs} />
+        <Section title="Bars" array={bars} />
+        <Section title="Coffee shops" array={coffee-shops} />
+        <Section title="Attractions" array={attractions} />
+        <Section title="Vegan food" array={vegan-food} /> */}
       </main>
     </>
   );

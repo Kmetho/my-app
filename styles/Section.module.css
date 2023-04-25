@@ -1,0 +1,35 @@
+.title {
+  margin: auto 5%;
+}
+
+.cardBox {
+  display: grid;
+  grid-template: auto / 1fr;
+  place-items: center;
+  align-content: center;
+  margin: auto 5%;
+}
+
+@media (min-width: 700px) {
+  .cardBox {
+    grid-template: auto / repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .cardBox {
+    grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1324px) {
+  .cardBox {
+    grid-template: auto / repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1660px) {
+  .cardBox {
+    grid-template: auto / repeat(5, 1fr);
+  }
+}

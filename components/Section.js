@@ -1,12 +1,13 @@
 import createCard from "./createCard";
+import styles from "../styles/Section.module.css";
 
-const GalleriesSection = (props) => {
+const Section = (props) => {
   return (
-    <section>
-      <h2>{props.title}</h2>
-      <div>{props.array.map(createCard)}</div>
+    <section className={styles.section}>
+      <h2 className={styles.title}>{props.title}</h2>
+      <div className={styles.cardBox}>{props.array.map(createCard)}</div>
     </section>
   );
 };
 
-export default GalleriesSection;
+export default Section;
