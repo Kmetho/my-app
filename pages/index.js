@@ -4,8 +4,8 @@ import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 import Section from "@/components/Section";
 import { Playfair_Display, Hanken_Grotesk } from "next/font/google";
-import galleries from "@/arrays/galleries";
-import parks from "@/arrays/parks";
+import galleries from "../data/galleries.json";
+import parks from "../data/parks.json";
 
 const playfair = Playfair_Display({
   variable: "--playfair-font",

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Parc Floral",
+    "href": "/places/parc-floral",
+    "imgUrl": "/parks/parc-floral.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Parc Monceau",
+    "href": "/places/monceau",
+    "imgUrl": "/parks/monceau.jpg"
+  }
+]
