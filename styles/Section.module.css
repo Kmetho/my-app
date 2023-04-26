@@ -1,5 +1,7 @@
 .title {
   margin: auto 5%;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .cardBox {
@@ -7,7 +9,7 @@
   grid-template: auto / 1fr;
   place-items: center;
   align-content: center;
-  margin: auto 5%;
+  margin: 1% 5%;
 }
 
 @media (min-width: 700px) {
@@ -17,6 +19,9 @@
 }
 
 @media (min-width: 1000px) {
+  .title {
+    text-align: left;
+  }
   .cardBox {
     grid-template: auto / repeat(3, 1fr);
   }

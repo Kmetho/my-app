@@ -21,7 +21,7 @@ const hanken = Hanken_Grotesk({
 });
 
 const sortClick = () => {
-  console.log("hi");
+  
 };
 
 export async function getStaticProps(context) {
@@ -59,13 +59,15 @@ export default function Home(props) {
           width="1000"
           height="600"
         />
-        <Section title="Galleries" array={galleries} />
-        <Section title="Parks" array={parks} />
-        <Section title="Clubs" array={clubs} />
-        <Section title="Bars" array={bars} />
-        <Section title="Coffee shops" array={coffeeShops} />
-        {/* <Section title="Attractions" array={attractions} /> */}
-        <Section title="Vegan food" array={veganFood} />
+        <div className={"sectionGrid"}>
+          <Section title="Galleries" array={galleries} />
+          <Section title="Parks" array={parks} />
+          <Section title="Clubs" array={clubs} />
+          <Section title="Bars" array={bars} />
+          <Section title="Coffee shops" array={coffeeShops} />
+          {/* <Section title="Attractions" array={attractions} /> */}
+          <Section title="Vegan food" array={veganFood} />
+        </div>
       </main>
     </>
   );
