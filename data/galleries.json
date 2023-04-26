@@ -1,50 +1,72 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "name": "Musée d'Orsay",
+    "address": "1 Rue de la Légion d'Honneur, 75007",
     "href": "/places/musee-d'orsay",
     "imgUrl": "/galleries/musee-d'orsay.jpg"
   },
   {
-    "id": 2,
+    "id": 1,
     "name": "Le Centre Pompidou",
+    "address": "Place Georges-Pompidou, 75004",
     "href": "/places/le-centre-pompidou",
     "imgUrl": "/galleries/le-centre-pompidou.jpg"
   },
   {
-    "id": 3,
+    "id": 2,
     "name": "Palais de Tokyo",
+    "address": "13 Av. du Président Wilson, 75116",
     "href": "/places/palais-de-tokyo",
     "imgUrl": "/galleries/palais-de-tokyo.jpg"
   },
   {
-    "id": 4,
+    "id": 3,
     "name": "Fondation Louis Vuitton",
+    "address": "8 Av. du Mahatma Gandhi, 75116",
     "href": "/places/fondation-louis-vuitton",
     "imgUrl": "/galleries/fondation-louis-vuitton.jpg"
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "Le CENTQUATRE",
+    "address": "5 Rue Curial, 75019",
     "href": "/places/le-centquatre",
     "imgUrl": "/galleries/le-centquatre.jpg"
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "Musée de l'Orangerie",
+    "address": "Jardin des Tuileries, 75001",
     "href": "/places/musee-de-l'orangerie",
     "imgUrl": "/galleries/musee-de-l'orangerie.jpg"
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "Musée du Quai Branly",
+    "address": "37 Quai Jacques Chirac, 75007",
     "href": "/places/musee-du-quai-branly",
     "imgUrl": "/galleries/musee-du-quai-branly.jpg"
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "Galerie Thaddaeus Ropac",
+    "address": "7 Rue Debelleyme, 75003",
     "href": "/places/musee-du-quai-branly",
     "imgUrl": "/galleries/galerie-thaddaeus-ropac.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Centre culturel suisse",
+    "address": "38 Rue des Francs Bourgeois, 75003",
+    "href": "/places/centre-culturel-suisse",
+    "imgUrl": "/galleries/suisse.jpg"
+  },
+  {
+    "id": 9,
+    "name": "59 Rivoli",
+    "address": "59 Rue de Rivoli, 75001 ",
+    "href": "/places/59-rivoli",
+    "imgUrl": "/galleries/59rivoli.jpg"
   }
 ]
