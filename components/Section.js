@@ -13,7 +13,7 @@ const Section = (props) => {
               id={thisObject.id}
               name={thisObject.name}
               imgUrl={thisObject.imgUrl}
-              href={thisObject.href}
+              href={`/` + props.title.toLowerCase() + `/${thisObject.id}`}
             />
           );
         })}

@@ -9,12 +9,13 @@
   grid-template: auto / 1fr;
   place-items: center;
   align-content: center;
-  margin: 1% 5%;
+  margin: 1% 0;
 }
 
 @media (min-width: 700px) {
   .cardBox {
     grid-template: auto / repeat(2, 1fr);
+    margin: 1% 3%;
   }
 }
 

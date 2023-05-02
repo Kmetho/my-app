@@ -5,7 +5,7 @@ const Banner = (props) => {
     <div className={styles.headerBox}>
       <h1 className={styles.header}>༺☆fun activieties☆༻</h1>
       <h2 className={styles.underheader}> . ★⋆. ࿐࿔ Diane, I can't decide what to do･ﾟ:*</h2>
-      <button className={styles.button} onClick={props.handleOnClick}>
+      <button className={styles.button + " glass"} onClick={props.handleOnClick}>
         {props.buttonText}
       </button>
     </div>

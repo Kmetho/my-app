@@ -4,12 +4,12 @@ import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 import Section from "@/components/Section";
 import { Playfair_Display, Hanken_Grotesk } from "next/font/google";
-import galleries from "../data/galleries.json";
-import parks from "../data/parks.json";
-import coffeeShops from "../data/coffee-shops.json";
-import clubs from "../data/clubs.json";
-import bars from "../data/bars.json";
-import veganFood from "../data/vegan-food.json";
+import galleriesData from "../data/galleries.json";
+import parksData from "../data/parks.json";
+import coffeeShopsData from "../data/coffee-shops.json";
+import clubsData from "../data/clubs.json";
+import barsData from "../data/bars.json";
+import restaurantsData from "../data/restaurants.json";
 
 const playfair = Playfair_Display({
   variable: "--playfair-font",
@@ -20,24 +20,23 @@ const hanken = Hanken_Grotesk({
   subsets: ["latin"],
 });
 
-const sortClick = () => {
-  
-};
+const sortClick = () => {};
 
 export async function getStaticProps(context) {
   return {
     props: {
-      galleries,
-      parks,
-      coffeeShops,
-      clubs,
-      bars,
-      veganFood,
+      galleries: galleriesData,
+      parks: parksData,
+      coffeeShops: coffeeShopsData,
+      clubs: clubsData,
+      bars: barsData,
+      restaurants: restaurantsData,
     },
   };
 }
 
 export default function Home(props) {
+  console.log(props);
   return (
     <>
       <Head>
@@ -60,13 +59,13 @@ export default function Home(props) {
           height="600"
         />
         <div className={"sectionGrid"}>
-          <Section title="Galleries" array={galleries} />
-          <Section title="Parks" array={parks} />
-          <Section title="Clubs" array={clubs} />
-          <Section title="Bars" array={bars} />
-          <Section title="Coffee shops" array={coffeeShops} />
-          {/* <Section title="Attractions" array={attractions} /> */}
-          <Section title="Vegan food" array={veganFood} />
+          <Section title="Galleries" array={props.galleries} />
+          <Section title="Parks" array={props.parks} />
+          <Section title="Clubs" array={props.clubs} />
+          <Section title="Bars" array={props.bars} />
+          <Section title="Coffee shops" array={props.coffeeShops} />
+          {/* <Section title="Attractions" array={props.attractions} /> */}
+          <Section title="Restaurants" array={props.restaurants} />
         </div>
       </main>
     </>
