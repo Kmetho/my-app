@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
+import BigCard from "../../components/BigCard";
 import styles from "../../styles/Dynamic.module.css";
 import parksData from "../../data/parks.json";
 
@@ -10,15 +9,23 @@ export function getStaticProps(staticProps) {
 
   return {
     props: {
-      park: parksData.find((park) => {
+      place: parksData.find((park) => {
         return park.id.toString() === params.id;
       }),
     },
   };
 }
+
 export function getStaticPaths() {
+  const paths = parksData.map((park) => {
+    return {
+      params: {
+        id: park.id.toString(),
+      },
+    };
+  });
   return {
-    paths: [{ params: { id: "40" } }],
+    paths,
     fallback: true,
   };
 }
@@ -44,18 +51,11 @@ const Place = (props) => {
         <link rel="icon" href="../static/icon.png" />
       </Head>
       <main>
-        <div className="glass">
-          <h3>{props.park.name}</h3>
-          <Image
-            src={props.park.imgUrl}
-            width="260"
-            height="160"
-            alt={props.park.name}
-          />
-          <p>{props.park.address}</p>
-        </div>
-
-        <Link href="/">return</Link>
+        <BigCard
+          name={props.place.name}
+          address={props.place.address}
+          imgUrl={props.place.imgUrl}
+        />
       </main>
     </>
   );

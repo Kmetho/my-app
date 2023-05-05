@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 import Section from "@/components/Section";
-import { Playfair_Display, Hanken_Grotesk } from "next/font/google";
 import galleriesData from "../data/galleries.json";
 import parksData from "../data/parks.json";
 import coffeeShopsData from "../data/coffee-shops.json";
@@ -11,14 +10,6 @@ import clubsData from "../data/clubs.json";
 import barsData from "../data/bars.json";
 import restaurantsData from "../data/restaurants.json";
 
-const playfair = Playfair_Display({
-  variable: "--playfair-font",
-  subsets: ["latin"],
-});
-const hanken = Hanken_Grotesk({
-  variable: "--hanken-font",
-  subsets: ["latin"],
-});
 
 const sortClick = () => {};
 
@@ -45,11 +36,7 @@ export default function Home(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>
-      <main
-        className={
-          styles.main + " " + hanken.variable + " " + playfair.variable
-        }
-      >
+      <main>
         <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
         <Image
           className={styles.sparkles}

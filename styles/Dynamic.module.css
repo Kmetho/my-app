@@ -1,0 +1,80 @@
+/** 
+  Breakpoints:
+  ------------
+  sm: min-width: 640px; //small device
+  md: min-width: 768px; // medium device
+  lg: min-width: 1024px; // large device
+  xl: min-width: 1280px; // extra large device
+  2xl: min-width: 1536px; // 2 x extra large device
+**/
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 30px;
+  margin-top: 5%;
+}
+
+.name {
+  margin-bottom: 10px;
+}
+
+.pic {
+  /* border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+  margin: 10px;
+  width: 90%;
+  height: auto;
+}
+
+.bigCard {
+  font-size: 1.75rem;
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.address {
+}
+
+.return {
+  border-radius: 20px;
+  font-size: 1.5rem;
+  max-width: fit-content;
+  margin: 50px auto;
+  padding: 5px 10px;
+}
+
+@media (min-width: 640px) {
+  .bigCard {
+    max-width: fit-content;
+  }
+}
+
+@media (min-width: 1000px) {
+  .wrapper {
+    margin: 0;
+    position: relative;
+  }
+  .pic {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 50%;
+  }
+
+  .bigCard {
+    margin: 0;
+    position: fixed;
+    top: 10%;
+    min-width: fit-content;
+  }
+
+  .return {
+    position: fixed;
+    bottom: 10%;
+    left: 5%;
+}
+}

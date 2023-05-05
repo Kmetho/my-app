@@ -5,7 +5,7 @@ import styles from "../styles/Card.module.css";
 const Card = (props) => {
   return (
     <Link href={props.href}>
-      <div className={styles.card + " glass"}>
+      <div className={styles.card + " glass glass-hover"}>
         <h3 className={styles.name}>{props.name}</h3>
         <Image
           className={styles.pic}
