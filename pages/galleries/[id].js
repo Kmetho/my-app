@@ -43,7 +43,7 @@ const Place = (props) => {
   return (
     <>
       <Head>
-        <title>{name}</title>
+        <title>{props.place.name}</title>
         <meta name="description" content="Where to move" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />

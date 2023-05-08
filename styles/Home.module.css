@@ -35,6 +35,7 @@
   font-size: 1rem;
   margin-top: 1.5rem;
   padding: 0.5rem 0.75rem;
+  filter: blur(0);
 }
 
 .sparkles {
