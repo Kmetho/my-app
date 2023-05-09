@@ -25,7 +25,7 @@ const BigCard = (props) => {
       />
 
       <div className={styles.bigCard + " glass"}>
-        <Link href="../pages/index.js">
+        <Link href="/">
           <p className={styles.return}>← return</p>
         </Link>
 
