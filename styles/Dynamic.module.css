@@ -16,10 +16,6 @@
   margin-top: 5%;
 }
 
-.name {
-  margin-bottom: 10px;
-}
-
 .pic {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -30,27 +26,20 @@
 .bigCard {
   font-size: 1.75rem;
   width: 90%;
-  padding: 10px 20px;
-}
-
-.address {
-  font-style: italic;
+  padding: 10px 20px 20px;
+  display: grid;
+  gap: 20px;
 }
 
 .return {
   font-size: 1.25rem;
   max-width: fit-content;
-  margin: 0.5rem 0 1rem;
 }
 
 .button {
   font-weight: 600;
   font-size: 1rem;
-  margin: 1rem 0;
-  padding: 0.5rem 0.75rem;
-}
-
-.button {
+  padding: 8px 12px;
   cursor: pointer;
   border-radius: 50px;
   color: var(--text-color);
@@ -62,9 +51,8 @@
   justify-content: space-around;
   align-items: baseline;
 }
-
 .count {
-  font-size: 2rem;
+  padding: 0 20px;
 }
 
 @media (min-width: 640px) {
@@ -93,11 +81,4 @@
     position: fixed;
     top: 10%;
   }
-
-  /* .return { */
-  /* position: fixed;
-    top: 5%;
-    left: 3.5%;
-    z-index: 100; */
-  /* } */
 }
