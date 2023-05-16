@@ -1,25 +1,54 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../../styles/Dynamic.module.css";
-import coffeeShopsData from "../../data/coffee-shops.json";
 import BigCard from "@/components/BigCard";
 
-export function getStaticProps(staticProps) {
+export async function getStaticProps(staticProps) {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: "fsq3pLskBIyofC13OhJBTij3ACE6h6j19OQTtiF68A98C8A=",
+    },
+  };
+
+  const response = await fetch(
+    "https://api.foursquare.com/v3/places/search?query=flowers&near=Copenhagen",
+    options
+  );
+  let data = await response.json();
+  data = data.results;
+
   const params = staticProps.params;
 
   return {
     props: {
-      place: coffeeShopsData.find((coffeeShop) => {
-        return coffeeShop.id.toString() === params.id;
+      place: data.find((object) => {
+        return object.fsq_id.toString() === params.id;
       }),
     },
   };
 }
-export function getStaticPaths() {
-  const paths = coffeeShopsData.map((coffeeShop) => {
+export async function getStaticPaths() {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: "fsq3pLskBIyofC13OhJBTij3ACE6h6j19OQTtiF68A98C8A=",
+    },
+  };
+
+  const response = await fetch(
+    "https://api.foursquare.com/v3/places/search?query=flowers&near=Copenhagen",
+    options
+  );
+  let data = await response.json();
+  data = data.results;
+
+  const paths = data.map((object) => {
     return {
       params: {
-        id: coffeeShop.id.toString(),
+        id: object.fsq_id.toString(),
       },
     };
   });
@@ -52,8 +81,11 @@ const Place = (props) => {
       <main>
         <BigCard
           name={props.place.name}
-          address={props.place.address}
-          imgUrl={props.place.imgUrl}
+          address={props.place.location.address}
+          imgUrl={
+            props.place.imgUrl ||
+            "https://images.unsplash.com/photo-1503954230032-c850298b9df3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          }
         />
       </main>
     </>
