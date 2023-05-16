@@ -32,7 +32,7 @@ export default function Home(props) {
     <>
       <Head>
         <title>Activities</title>
-        <meta name="description" content="What to do in Paris" />
+        <meta name="description" content="Flowers, where are you" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>
