@@ -3,36 +3,39 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 import Section from "@/components/Section";
-import galleriesData from "../data/galleries.json";
-import parksData from "../data/parks.json";
-import coffeeShopsData from "../data/coffee-shops.json";
-import clubsData from "../data/clubs.json";
-import barsData from "../data/bars.json";
-import restaurantsData from "../data/restaurants.json";
-
 
 const sortClick = () => {};
 
 export async function getStaticProps(context) {
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: "fsq3pLskBIyofC13OhJBTij3ACE6h6j19OQTtiF68A98C8A=",
+    },
+  };
+
+  const response = await fetch(
+    "https://api.foursquare.com/v3/places/search?query=flowers&near=Copenhagen",
+    options
+  );
+  const data = await response.json();
+
+  console.log(data.results[0].location.address);
+
   return {
     props: {
-      galleries: galleriesData,
-      parks: parksData,
-      coffeeShops: coffeeShopsData,
-      clubs: clubsData,
-      bars: barsData,
-      restaurants: restaurantsData,
+      data: data.results,
     },
   };
 }
 
 export default function Home(props) {
-  console.log(props);
   return (
     <>
       <Head>
         <title>Activities</title>
-        <meta name="description" content="What to do in Paris" />
+        <meta name="description" content="Flowers, where are you" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>
@@ -46,13 +49,7 @@ export default function Home(props) {
           height="600"
         />
         <div className={"sectionGrid"}>
-          <Section title="Galleries" array={props.galleries} />
-          <Section title="Parks" array={props.parks} />
-          <Section title="Clubs" array={props.clubs} />
-          <Section title="Bars" array={props.bars} />
-          <Section title="Coffee shops" array={props.coffeeShops} />
-          {/* <Section title="Attractions" array={props.attractions} /> */}
-          <Section title="Restaurants" array={props.restaurants} />
+          <Section title="in copenhagen" data={props.data} />
         </div>
       </main>
     </>
