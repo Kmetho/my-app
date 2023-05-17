@@ -35,7 +35,7 @@ export default function Home(props) {
     <>
       <Head>
         <title>Activities</title>
-        <meta name="description" content="Flowers, where are you" />
+        <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>
@@ -49,7 +49,7 @@ export default function Home(props) {
           height="600"
         />
         <div className={"sectionGrid"}>
-          <Section title="in copenhagen" data={props.data} />
+          <Section title="copenhagen" data={props.data} />
         </div>
       </main>
     </>
