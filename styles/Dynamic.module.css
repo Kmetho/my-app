@@ -17,7 +17,6 @@
 }
 
 .pic {
-  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 90%;
   height: auto;
@@ -37,13 +36,13 @@
 }
 
 .button {
+  border: none;
+  background: transparent;
   font-weight: 600;
   font-size: 1rem;
   padding: 8px 12px;
   cursor: pointer;
-  border-radius: 50px;
   color: var(--text-color);
-  filter: blur(0);
 }
 
 .ranking {
@@ -67,7 +66,6 @@
     position: relative;
   }
   .pic {
-    border-radius: 0 0 10px 0;
     border: none;
     margin: 0;
     position: fixed;

@@ -28,15 +28,15 @@
 }
 
 .button {
+  border: none;
+  background: transparent;
   cursor: pointer;
-  border-radius: 50px;
   color: var(--text-color);
   font-weight: 600;
   font-size: 1rem;
   margin-top: 1.5rem;
-  padding: 0.5rem 0.75rem;
-  filter: blur(0);
 }
+
 
 .sparkles {
   opacity: 0.5;

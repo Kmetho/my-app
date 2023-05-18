@@ -31,6 +31,7 @@ body {
 }
 
 body {
+  background-color: var(--platinum-color);
   background-image: url(/static/bg.png);
   background-position: 50%;
   background-repeat: no-repeat;
@@ -50,8 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", "Times New Roman", Times, serif;
-  font-style: italic;
+  font-weight: bold;
   color: var(--text-color);
   line-height: 1;
 }
@@ -61,12 +61,35 @@ h6 {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .glass-hover:hover {
   background: rgba(255, 255, 255, 0.7);
+}
+
+.underline {
+  display: inline-block;
+  position: relative;
+  color: var(--text-color);
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--text-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .sectionGrid {
