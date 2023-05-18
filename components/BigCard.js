@@ -18,7 +18,8 @@ const BigCard = (props) => {
       <Image
         priority
         className={styles.pic}
-        src={props.imgUrl}
+        src={
+          props.imgUrl}
         width="780"
         height="480"
         alt={props.name}
@@ -45,14 +46,14 @@ const BigCard = (props) => {
 
         <div className={styles.ranking}>
           <button
-            className={styles.button + " glass glass-hover"}
+            className={styles.button + " underline"}
             onClick={handleUpvote}
           >
             Upvote
           </button>
           <p className={styles.count}>{count}</p>
           <button
-            className={styles.button + " glass glass-hover"}
+            className={styles.button + " underline"}
             onClick={handleDownvote}
           >
             Downvote
