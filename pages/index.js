@@ -2,30 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
-import Section from "@/components/Section";
+import Section from "../components/Section";
+import { fetchData } from "@/lib/fetchData";
 
 const sortClick = () => {};
 
 export async function getStaticProps(context) {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: "fsq3pLskBIyofC13OhJBTij3ACE6h6j19OQTtiF68A98C8A=",
-    },
-  };
-
-  const response = await fetch(
-    "https://api.foursquare.com/v3/places/search?query=flowers&near=Copenhagen",
-    options
-  );
-  const data = await response.json();
-
-  console.log(data.results[0].location.address);
-
+  const data = await fetchData();
   return {
     props: {
-      data: data.results,
+      data: data,
     },
   };
 }
