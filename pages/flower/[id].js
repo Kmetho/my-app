@@ -39,7 +39,7 @@ export async function getStaticPaths() {
   };
 
   const response = await fetch(
-    "https://api.foursquare.com/v3/places/search?query=flowers&near=Copenhagen",
+    "https://api.foursquare.com/v3/places/search?query=garden&near=copenhagen",
     options
   );
   let data = await response.json();
