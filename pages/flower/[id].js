@@ -2,25 +2,12 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../../styles/Dynamic.module.css";
 import BigCard from "@/components/BigCard";
+import { fetchData } from "@/lib/fetchData";
 
 export async function getStaticProps(staticProps) {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: "fsq3pLskBIyofC13OhJBTij3ACE6h6j19OQTtiF68A98C8A=",
-    },
-  };
-
-  const response = await fetch(
-    "https://api.foursquare.com/v3/places/search?query=flowers&near=Copenhagen",
-    options
-  );
-  let data = await response.json();
-  data = data.results;
+  const data = await fetchData();
 
   const params = staticProps.params;
-
   return {
     props: {
       place: data.find((object) => {
@@ -30,20 +17,7 @@ export async function getStaticProps(staticProps) {
   };
 }
 export async function getStaticPaths() {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: "fsq3pLskBIyofC13OhJBTij3ACE6h6j19OQTtiF68A98C8A=",
-    },
-  };
-
-  const response = await fetch(
-    "https://api.foursquare.com/v3/places/search?query=garden&near=copenhagen",
-    options
-  );
-  let data = await response.json();
-  data = data.results;
+  const data = await fetchData();
 
   const paths = data.map((object) => {
     return {
@@ -60,7 +34,6 @@ export async function getStaticPaths() {
 
 const Place = (props) => {
   const router = useRouter();
-  let name = router.query.id;
 
   if (router.isFallback) {
     return (
