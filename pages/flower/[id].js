@@ -6,8 +6,8 @@ import { fetchData } from "@/lib/fetchData";
 
 export async function getStaticProps(staticProps) {
   const data = await fetchData();
-
   const params = staticProps.params;
+
   return {
     props: {
       place: data.find((object) => {
@@ -16,9 +16,9 @@ export async function getStaticProps(staticProps) {
     },
   };
 }
+
 export async function getStaticPaths() {
   const data = await fetchData();
-
   const paths = data.map((object) => {
     return {
       params: {
@@ -47,7 +47,7 @@ const Place = (props) => {
     <>
       <Head>
         <title>{props.place.name}</title>
-        <meta name="description" content="Where to move" />
+        <meta name="description" content="flower finder" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>

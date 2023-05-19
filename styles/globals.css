@@ -32,10 +32,6 @@ body {
 
 body {
   background-color: var(--platinum-color);
-  background-image: url(/static/bg.png);
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-attachment: fixed;
   color: rgb(12, 7, 34);
   font-family: "Hanken Grotesk", Helvetica, sans-serif;

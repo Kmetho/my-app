@@ -9,6 +9,7 @@ const sortClick = () => {};
 
 export async function getStaticProps(context) {
   const data = await fetchData();
+
   return {
     props: {
       data: data,
@@ -21,19 +22,12 @@ export default function Home(props) {
     <>
       <Head>
         <title>Activities</title>
-        <meta name="description" content="" />
+        <meta name="description" content="flower finder" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
       </Head>
       <main>
         <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
-        <Image
-          className={styles.sparkles}
-          src="/static/bg-stars.png"
-          alt="sparkles"
-          width="1000"
-          height="600"
-        />
         <div className={"sectionGrid"}>
           <Section title="copenhagen" data={props.data} />
         </div>
