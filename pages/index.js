@@ -29,7 +29,7 @@ export default function Home(props) {
       <main>
         <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
         <div className={"sectionGrid"}>
-          <Section title="copenhagen" data={props.data} />
+          <Section title="Copenhagen" data={props.data} />
         </div>
       </main>
     </>
