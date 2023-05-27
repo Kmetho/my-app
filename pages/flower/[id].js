@@ -11,7 +11,7 @@ export async function getStaticProps(staticProps) {
   return {
     props: {
       place: data.find((object) => {
-        return object.fsq_id.toString() === params.id;
+        return object.id.toString() === params.id;
       }),
     },
   };
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   const paths = data.map((object) => {
     return {
       params: {
-        id: object.fsq_id.toString(),
+        id: object.id.toString(),
       },
     };
   });
@@ -54,7 +54,7 @@ const Place = (props) => {
       <main>
         <BigCard
           name={props.place.name}
-          address={props.place.location.address}
+          address={props.place.address}
           imgUrl={
             props.place.imgUrl ||
             "https://images.unsplash.com/photo-1503954230032-c850298b9df3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
