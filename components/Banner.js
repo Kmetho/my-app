@@ -17,6 +17,7 @@ const Banner = (props) => {
       >
         {props.buttonText}
       </button>
+      <p>{props.errorText}</p>
     </div>
   );
 };

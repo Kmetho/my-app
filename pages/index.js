@@ -1,11 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 import Section from "../components/Section";
 import { fetchData } from "@/lib/fetchData";
-
-const sortClick = () => {};
+import trackLocation from "@/hooks/trackLocation";
 
 export async function getStaticProps(context) {
   const data = await fetchData();
@@ -18,6 +15,12 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
+  const { handleTrackLocation, message, latLong, isLocating } = trackLocation();
+  const sortClick = () => {
+    console.log({ latLong, message });
+    handleTrackLocation();
+  };
+
   return (
     <>
       <Head>
@@ -27,7 +30,13 @@ export default function Home(props) {
         <link rel="icon" href="../static/icon.png" />
       </Head>
       <main>
-        <Banner handleOnClick={sortClick} buttonText="Sort by closest" />
+        <Banner
+          handleOnClick={sortClick}
+          buttonText={
+            isLocating ? "Locating..." : "Click here to discover nearby flowers"
+          }
+          errorText={message ? "Something went wrong: " + message : ""}
+        />
         <div className={"sectionGrid"}>
           <Section title="Copenhagen" data={props.data} />
         </div>
