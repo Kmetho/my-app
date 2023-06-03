@@ -35,7 +35,7 @@ export default function Home(props) {
           buttonText={
             isLocating ? "Locating..." : "Click here to discover nearby flowers"
           }
-          errorText={message ? "Something went wrong: " + message : ""}
+          errorText={message && "Something went wrong: " + message}
         />
         <div className={"sectionGrid"}>
           <Section title="Copenhagen" data={props.data} />
