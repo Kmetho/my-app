@@ -24,7 +24,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Activities</title>
+        <title>Flowers, where are you</title>
         <meta name="description" content="flower finder" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="../static/icon.png" />
