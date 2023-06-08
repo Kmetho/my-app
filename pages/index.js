@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Section from "../components/Section";
 import { fetchData } from "@/lib/fetchData";
 import trackLocation from "@/hooks/trackLocation";
+import { useEffect, useState } from "react";
 
 export async function getStaticProps(context) {
   const data = await fetchData();
@@ -15,7 +16,27 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
+  console.log(props);
+
   const { handleTrackLocation, message, latLong, isLocating } = trackLocation();
+
+  const [fetchedPlaces, setFetchedPlaces] = useState("");
+
+  useEffect(() => {
+    async function setPlacesByLocation() {
+      if (latLong) {
+        try {
+          const fetchedData = await fetchData(latLong, 10);
+          console.log({ fetchedData });
+          setFetchedPlaces(fetchedData);
+        } catch (error) {
+          console.log({ error });
+        }
+      }
+    }
+    setPlacesByLocation();
+  }, [latLong]);
+
   const sortClick = () => {
     console.log({ latLong, message });
     handleTrackLocation();
@@ -33,11 +54,16 @@ export default function Home(props) {
         <Banner
           handleOnClick={sortClick}
           buttonText={
-            isLocating ? "Locating..." : "Click here to discover nearby flowers"
+            isLocating
+              ? "Locating..."
+              : "Click here to discover nearby flower boutiques"
           }
           errorText={message && "Something went wrong: " + message}
         />
         <div className={"sectionGrid"}>
+          {fetchedPlaces.length > 0 && (
+            <Section title="Nearest" data={fetchedPlaces} />
+          )}
           <Section title="Copenhagen" data={props.data} />
         </div>
       </main>
