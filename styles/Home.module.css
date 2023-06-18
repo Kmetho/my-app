@@ -10,7 +10,7 @@
 
 /** By default, this is a mobile breakpoint **/
 .headerBox {
-  margin: 5%;
+  margin: 10% 5%;
   position: relative;
   z-index: 2;
   text-align: left;
