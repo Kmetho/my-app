@@ -21,6 +21,7 @@ export default function Home(props) {
   const { handleTrackLocation, message, latLong, isLocating } = trackLocation();
 
   const [fetchedPlaces, setFetchedPlaces] = useState("");
+  const [fetchedPlacesError, setFetchedPlacesError] = useState(null);
 
   useEffect(() => {
     async function setPlacesByLocation() {
@@ -31,6 +32,7 @@ export default function Home(props) {
           setFetchedPlaces(fetchedData);
         } catch (error) {
           console.log({ error });
+          setFetchedPlacesError(error.message);
         }
       }
     }
