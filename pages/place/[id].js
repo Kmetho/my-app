@@ -4,15 +4,20 @@ import styles from "../../styles/Dynamic.module.css";
 import BigCard from "@/components/BigCard";
 import { fetchData } from "@/lib/fetchData";
 
-export async function getStaticProps(staticProps) {
+export async function getStaticProps({ params }) {
   const data = await fetchData();
-  const params = staticProps.params;
+  const place = data.find((object) => object.id.toString() === params.id);
+
+  // Check if place is found, if not, you can handle it accordingly.
+  if (!place) {
+    return {
+      notFound: true, // This will return a 404 page
+    };
+  }
 
   return {
     props: {
-      place: data.find((object) => {
-        return object.id.toString() === params.id;
-      }),
+      place,
     },
   };
 }
