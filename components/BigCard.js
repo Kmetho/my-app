@@ -22,7 +22,8 @@ const BigCard = (props) => {
           props.imgUrl}
         width="780"
         height="480"
-        alt={props.name}
+        // alt={props.name}
+        alt="..."
       />
 
       <div className={styles.bigCard + " glass"}>

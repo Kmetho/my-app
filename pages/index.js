@@ -16,7 +16,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
-  console.log(props);
+  // console.log(props);
 
   const { handleTrackLocation, message, latLong, isLocating } = trackLocation();
 
@@ -27,7 +27,7 @@ export default function Home(props) {
     async function setPlacesByLocation() {
       if (latLong) {
         try {
-          const fetchedData = await fetchData(latLong, 10);
+          const fetchedData = await fetchData(latLong, 30);
           console.log({ fetchedData });
           setFetchedPlaces(fetchedData);
         } catch (error) {
@@ -58,7 +58,7 @@ export default function Home(props) {
           buttonText={
             isLocating
               ? "Locating..."
-              : "Click here to discover nearby flower boutiques"
+              : "Click here to discover nearby flower places"
           }
           errorText={message && "Something went wrong: " + message}
         />

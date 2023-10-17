@@ -1,23 +1,20 @@
+import React from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import styles from "../../styles/Dynamic.module.css";
 import BigCard from "@/components/BigCard";
 import { fetchData } from "@/lib/fetchData";
 
-export async function getStaticProps({ params }) {
-  const data = await fetchData();
-  const place = data.find((object) => object.id.toString() === params.id);
+export async function getStaticProps(staticProps) {
+  const params = staticProps.params;
 
-  // Check if place is found, if not, you can handle it accordingly.
-  if (!place) {
-    return {
-      notFound: true, // This will return a 404 page
-    };
-  }
-
+  const places = await fetchData();
+  const findPlaceById = places.find((place) => {
+    return place.id.toString() === params.id;
+  });
   return {
     props: {
-      place,
+      place: findPlaceById ? findPlaceById : {},
     },
   };
 }
@@ -38,7 +35,16 @@ export async function getStaticPaths() {
 }
 
 const Place = (props) => {
+  const { useEffect, useState, useContext } = React;
   const router = useRouter();
+
+  const id = router.query.id;
+
+  const [place, setPlace] = useState(props.place || {});
+
+  // const {
+  //   state: { places },
+  // } = useContext(StoreContext);
 
   if (router.isFallback) {
     return (
